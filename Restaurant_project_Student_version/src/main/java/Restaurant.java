@@ -69,7 +69,12 @@ public class Restaurant {
 
 
     public int calculateOrderPrice(List<String> itemList){
-
+        int orderCost = 0;
+        for(String itemName : itemList){
+            Item item = this.findItemByName(itemName);
+            orderCost += item.getPrice();
+        }
+        return orderCost;
     }
 
 }
