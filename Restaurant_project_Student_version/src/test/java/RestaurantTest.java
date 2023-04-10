@@ -21,14 +21,6 @@ class RestaurantTest {
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
 
-        // Adding more items to menu
-        restaurant.addToMenu("Pizza capsicum", 299);
-        restaurant.addToMenu("Chhole Bhature", 150);
-        restaurant.addToMenu("Rava Dosa", 260);
-        restaurant.addToMenu("Hyderabadi Chicken Biryani", 250);
-        restaurant.addToMenu("Special Thaali", 390);
-        restaurant.addToMenu("Vada Paav", 80);
-
         System.out.println("Restaurant Initialized.");
     }
 
