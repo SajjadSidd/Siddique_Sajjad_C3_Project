@@ -67,4 +67,9 @@ public class Restaurant {
         return name;
     }
 
+
+    public int calculateOrderPrice(List<String> itemList){
+
+    }
+
 }

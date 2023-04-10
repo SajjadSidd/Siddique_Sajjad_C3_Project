@@ -21,6 +21,14 @@ class RestaurantTest {
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
 
+        // Adding more items to menu
+        restaurant.addToMenu("Pizza capsicum", 299);
+        restaurant.addToMenu("Chhole Bhature", 150);
+        restaurant.addToMenu("Rava Dosa", 260);
+        restaurant.addToMenu("Hyderabadi Chicken Biryani", 250);
+        restaurant.addToMenu("Special Thaali", 390);
+        restaurant.addToMenu("Vada Paav", 80);
+
         System.out.println("Restaurant Initialized.");
     }
 
@@ -69,5 +77,31 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+
+
+    @Test
+    public void total_order_cost_should_be_equal_to_sum_of_selected_items_from_menu(){
+
+        // Selecting items from menu
+        List<String> itemList = new ArrayList<>();
+        itemList.add("Sweet corn soup");
+        itemList.add("Chhole Bhature");
+        itemList.add("Hyderabadi Chicken Biryani");
+        itemList.add("Rava Dosa");
+
+        int totalOrderCost = restaurant.calculateOrderPrice(itemList);
+        assertEquals((119+150+250+260),totalOrderCost);
+    }
+
+    @Test
+    public void total_order_cost_should_be_zero_if_no_items_selected_from_menu(){
+
+        // no items selected from menu
+        List<String> itemList = new ArrayList<>();
+
+        int totalOrderCost = restaurant.calculateOrderPrice(itemList);
+        assertEquals(0,totalOrderCost);
+    }
+
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
